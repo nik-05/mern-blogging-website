@@ -1,0 +1,41 @@
+frontend/node_modules
+# Node.js
+node_modules/
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE/Editor Files
+.idea/
+.vscode/
+
+# Temporary Files
+*.log
+*.tmp
+
+# Build/Compiled Files
+dist/
+build/
+*.exe
+*.dll
+*.so
+*.class
+
+# Environment/Configuration Files
+.env
+*.env.local
+*.env.development.local
+.env.production
+.env.test
+
+# Dependency Management Files
+package-lock.json
+yarn.lock
+npm-debug.log
+
+# User-specific Files
+.history/
+.bash_history
+.zsh_history
