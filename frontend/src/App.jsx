@@ -7,10 +7,12 @@ import { lookInSession } from "./common/session";
 export const UserContext = createContext({});
 
 const App = () => {
-  const [userAuth, setUserAuth] = useState();
-
+  const [userAuth, setUserAuth] = useState({});
+  console.log("Starting the application");
   useEffect(() => {
     let userInSession = lookInSession("user");
+    console.log("inside useEffects");
+    console.log(userInSession);
     userInSession
       ? setUserAuth(JSON.parse(userInSession))
       : setUserAuth({ access_token: null });
