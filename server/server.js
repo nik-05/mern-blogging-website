@@ -9,6 +9,7 @@ import cors from "cors";
 import admin from "firebase-admin";
 import serviceAccountKey from "./react-js-blog-website-f5a68-firebase-adminsdk-fezu2-93b98fa034.json" assert { type: "json" };
 import { getAuth } from "firebase-admin/auth";
+import aws from "aws-sdk";
 
 const server = express();
 let PORT = 3000;
@@ -24,6 +25,14 @@ server.use(express.json());
 server.use(cors());
 
 mongoose.connect(process.env.DB_LOCATION, { autoIndex: true });
+
+// Setting up s3 bucket
+
+const s3 = new aws.S3({
+  region: "ap-south-1",
+  accessKeyId: process.env.AWS_ACCESS_KEY,
+  secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+});
 
 const formatDataToSend = (user) => {
   const access_token = jwt.sign(
@@ -123,11 +132,9 @@ server.post("/signin", (req, res) => {
           }
         });
       } else {
-        return res
-          .status(403)
-          .json({
-            error: "Account was created with google. Log in using google",
-          });
+        return res.status(403).json({
+          error: "Account was created with google. Log in using google",
+        });
       }
     })
     .catch((err) => {
