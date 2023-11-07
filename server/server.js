@@ -41,6 +41,9 @@ const generateUploadURL = async () => {
   return await s3.getSignedUrlPromise("putObject", {
     Bucket: "blogging-website-nik",
     Key: imageName,
+
+
+    
     Expires: 1000,
     ContentType: "image/jpeg",
   });
