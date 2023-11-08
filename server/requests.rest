@@ -1,2 +1,15 @@
+POST http://localhost:3000/create-blog
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NDVlNmYyMDgzYzA4MTg2ZTRmMTU4NiIsImlhdCI6MTY5OTQ2NDQ0Mn0.znOameCsJJrUh0HkWLiMo1kdR4MjVNIIQbuQ6v4y1JI
 
-GET http://localhost:3000/get-upload-url
+{
+    "title": "Test Title",
+    "banner": "https://example.com/new-url",
+    "description": "short description",
+    "content": {
+        "blocks": [1, 2]
+    },
+    "tags": ["tag 1", "tag 2"]
+}
+
+# eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NDVlNmYyMDgzYzA4MTg2ZTRmMTU4NiIsImlhdCI6MTY5OTQ2NDQ0Mn0.znOameCsJJrUh0HkWLiMo1kdR4MjVNIIQbuQ6v4y1JI
