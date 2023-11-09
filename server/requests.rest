@@ -1,4 +1,8 @@
-GET http://localhost:3000/trending-blogs
+POST http://localhost:3000/search-blogs
+Content-Type: application/json
 
+{
+    "tag": "tag 1"
+}
 
 # eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NDVlNmYyMDgzYzA4MTg2ZTRmMTU4NiIsImlhdCI6MTY5OTQ2NDQ0Mn0.znOameCsJJrUh0HkWLiMo1kdR4MjVNIIQbuQ6v4y1JI
