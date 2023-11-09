@@ -304,6 +304,8 @@ server.post("/create-blog", verifyJWT, (req, res) => {
       .replace(/[^a-zA-Z0-9]/g, " ")
       .replace(/\s+/g, "-")
       .trim() + nanoid();
+  console.log("description");
+  console.log(description);
 
   let blog = new Blog({
     title,
