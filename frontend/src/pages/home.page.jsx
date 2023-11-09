@@ -4,6 +4,7 @@ import InPageNavigation from "../components/inpage-navigation.component";
 import axios from "axios";
 import Loader from "../components/loader.component";
 import BlogPostCard from "../components/blog-post.component";
+import MinimalBlogPost from "../components/nobanner-blog-post.component";
 const HomePage = () => {
   let [blogs, setBlog] = useState(null);
   let [trendingBlogs, setTrendingBlog] = useState(null);
@@ -72,7 +73,7 @@ const HomePage = () => {
                     key={i}
                     transition={{ duration: 1, delay: i * 0.1 }}
                   >
-                    <MinimalBlogPost />
+                    <MinimalBlogPost blog={blog} index={i} />
                   </AnimationWrapper>
                 );
               })
